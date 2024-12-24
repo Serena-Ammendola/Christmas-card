@@ -1,0 +1,280 @@
+body {
+    background-color: #F63D3E;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    margin-top: 160px;
+}
+
+.christmas-card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: 3s;
+}
+
+input#open {
+    display: none;
+}
+
+.card-front {
+    position: relative;
+    background-color: #fff;
+    width: 200px;
+    height: 300px;
+    overflow: hidden;
+    transform-origin: left;
+    transition: 3s;
+}
+
+.card-inside {
+    position: absolute;
+    background-color: #fff;
+    width: 200px;
+    height: 300px;
+    z-index: -1;
+    left: 0;
+    top: 0;
+}
+
+.open {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+    z-index: 6;
+    cursor: pointer;
+}
+
+#open:checked~.card-front {
+    transform: rotateY(-155deg);
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.13), 30px 0 50px rgba(0, 0, 0, 0.1);
+}
+
+#open:checked~.card-front:before {
+    z-index: 5;
+
+}
+
+.card-front:before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 280px;
+    background-color: #0C1A5E;
+    top: 10px;
+    left: 10px;
+}
+
+.christmas-tree {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-right: 50px solid transparent;
+    border-left: 50px solid transparent;
+    border-bottom: 160px solid #034247;
+    top: 75px;
+    left: 50px;
+}
+
+.christmas-tree:after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 25px;
+    background-color: #c47f1a;
+    left: -50px;
+    top: 140px;
+}
+
+.christmas-tree:before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 25px;
+    background-color: #a86d16;
+    left: 20px;
+    top: 130px;
+    box-shadow: -90px 0 #a86d16;
+}
+
+.text {
+    position: absolute;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 260px;
+    width: 200px;
+    text-align: center;
+    font-size: 13px;
+    font-family: brush script mt;
+}
+
+.text:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    border-bottom: 20px solid #faa307;
+    top: -185px;
+    left: 93px;
+}
+
+.ribbon,
+.ribbon:before {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 12.5px solid transparent;
+    border-top: 12.5px solid transparent;
+}
+
+.ribbon {
+    border-left: 10px solid #0C1A5E;
+    top: 205px;
+    left: 30px;
+}
+
+.ribbon:before {
+    content: "";
+    border-right: 10px solid #0C1A5E;
+    left: 120px;
+    top: -12.5px;
+}
+
+.ribbon:after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50px;
+    background-color: #fff;
+    top: -25px;
+    left: 21.5px;
+    box-shadow: 5px -3px yellow,
+        10px -6px blue,
+        15px -9px green,
+        20px -12px red,
+        25px -15px white,
+        30px -18px yellow,
+        35px -21px blue,
+        40px -24px green,
+        45px -27px red,
+        50px -30px white,
+        55px -33px yellow,
+        60px -36px blue,
+        60px -36px red,
+        15px -50px white,
+        20px -53px yellow,
+        25px -56px blue,
+        30px -59px green,
+        35px -62px red,
+        40px -65px white,
+        45px -68px yellow,
+        50px -71px blue;
+    ;
+}
+
+.star {
+    position: absolute;
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-right: 20px solid transparent;
+    border-bottom: 13px solid #ffba08;
+    border-left: 20px solid transparent;
+    transform: rotate(-35deg);
+    top: 68px;
+    left: 80px;
+}
+
+.star:before {
+    position: absolute;
+    display: block;
+    border-bottom: 13px solid #ffba08;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    height: 0;
+    width: 0;
+    top: -9px;
+    left: -11px;
+    content: '';
+    transform: rotate(-35deg);
+}
+
+.star:after {
+    position: absolute;
+    display: block;
+    top: 0.75px;
+    left: -20px;
+    width: 0px;
+    height: 0px;
+    border-right: 20px solid transparent;
+    border-bottom: 13px solid #ffba08;
+    border-left: 20px solid transparent;
+    transform: rotate(-70deg);
+    content: '';
+}
+
+.balls {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50px;
+    background-color: #c94038;
+    top: 185px;
+    left: 110px;
+    box-shadow: -30px -30px #c94038, -18px -74px #c94038;
+}
+
+.balls:before {
+    content: "";
+    position: absolute;
+    border-radius: 50px;
+    width: 10px;
+    height: 10px;
+    background-color: #f6b4b8;
+    left: -20px;
+    top: 10px;
+    box-shadow: 15px -55px #f6b4b8;
+}
+
+.card-inside:before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 280px;
+    background-color: #0C1A5E;
+    top: 10px;
+    left: 10px;
+}
+
+.title {
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    font-family: brush script mt;
+    line-height: 25px;
+    text-align: center;
+    top: 45px;
+    width: 200px;
+}
+
+.wishes {
+    position: absolute;
+    width: 150px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 15px;
+    font-size: 15px;
+    color: white;
+    height: 300px;
+    top: 45%;
+    left: 25px;
+}
